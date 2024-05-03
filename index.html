@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timesheet App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Timesheet Manager</h1>
+    <form id="timesheetForm">
+        <label for="date">Monday</label>
+        <input type="time" id="start-time" placeholder="Start" required>
+        <input type="time" id="stop-time" placeholder="Stop" required>
+        <input type="text" id="jobSite" placeholder="Project" required>
+        <button type="submit">Add</button>
+    </form>
+    <div id="timesheetEntries"></div>
+    <script src="script.js"></script>
+</body>
+</html>
