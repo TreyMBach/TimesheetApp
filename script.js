@@ -1,16 +1,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('timesheetForm').addEventListener('submit', function(e) {
         e.preventDefault();
-        const date = document.getElementById('date').value;  // Ensure there's an input with id="date"
-        const jobSite = document.getElementById('jobSite').value;
-        const start = document.getElementById('start-time').value; // Correctly referencing the start-time
-        const end = document.getElementById('stop-time').value;    // Correctly referencing the stop-time
+        const start = parseTime(document.getElementById('start-time').value);
+        const stop = document.getElementById('stop-time').value;
+        // const project = document.getElementById('jobSite').value;
 
-        console.log(start); // This will log the start time
-        console.log(end);   // This will log the stop time
+        const hours = start.hours + stop.hours
+
+        console.log(start)
+        console.log(hours)
+
     });
 });
 
+function parseTime(timeString) {
+    const parts = timeString.split(':');
+    const hours = parseInt(parts[0], 10);
+    const minutes = parseInt(parts[1], 10);
+
+    return {hours, minutes};
+}
 
 // function saveEntry(entry) {
 //     let entries = JSON.parse(localStorage.getItem('timesheetEntries')) || [];
